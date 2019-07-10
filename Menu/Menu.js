@@ -14,15 +14,18 @@ function createMenu(arr) {
   let header = document.querySelector(".header");
   let menu = document.createElement("div");
   let ul = document.createElement("ul");
-  let items = menuItems.map(item => {
+  menuItems.map(item => {
     let thing = document.createElement("li");
     thing.textContent = item;
+    ul.appendChild(thing);
     console.log(thing);
     console.log("anything");
+    return thing;
   });
 
   header.appendChild(menu);
   menu.appendChild(ul);
+  menu.classList.add("menu");
 
   menuButton.addEventListener("click", event => {
     menu.classList.toggle("menu--open");
